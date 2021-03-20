@@ -1,0 +1,209 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  .react-autosuggest__container {
+    position: relative;
+  }
+  
+  .react-autosuggest__input {
+    width: 130%;
+    height: 30px;
+    padding: 20px 20px;
+    font-family: Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    border: 1px solid #aaa;
+    border-radius: 20px;
+  }
+  
+  .react-autosuggest__input--focused {
+    outline: none;
+  }
+  
+  
+  .react-autosuggest__suggestions-container {
+    display: none;
+  }
+  
+  .react-autosuggest__suggestions-container--open {
+    display: block;
+    margin-block-start: 8px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px, 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 240px;
+    box-shadow: #adadad;
+    position: absolute;
+    width: 128%;
+    list-style-type: none;
+    font-size: 18px;
+    font-weight: 700;
+    z-index: 2;
+  }
+  
+  .react-autosuggest__suggestions-list {
+    border-bottom: #aaa;
+    border-radius: 20px;
+    padding: 5px;
+    color: black;
+    font-weight: 100;
+  }
+  
+  .react-autosuggest__suggestion {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: 0.5s;
+  }
+  
+  
+  .react-autosuggest__suggestion--highlighted {
+    background-color: #ddd;
+  }
+
+  @media (max-width: 1920px){
+    .react-autosuggest__input {
+      width: 270%;
+      height: 30px;
+      padding: 20px 20px;
+      font-family: Helvetica, sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      border: 1px solid #aaa;
+      border-radius: 20px;
+    }
+    .react-autosuggest__suggestions-container--open {
+      display: block;
+      margin-block-start: 8px;
+      background-color: white;
+      border-radius: 20px;
+      padding: 5px, 10px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      max-height: 240px;
+      box-shadow: #adadad;
+      position: absolute;
+      width: 268%;
+      list-style-type: none;
+      font-size: 18px;
+      font-weight: 700;
+      z-index: 2;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .react-autosuggest__suggestions-container--open {
+      display: block;
+      margin-block-start: 8px;
+      background-color: white;
+      border-radius: 20px;
+      padding: 5px, 10px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      max-height: 240px;
+      box-shadow: #adadad;
+      position: absolute;
+      width: 108%;
+      list-style-type: none;
+      font-size: pxToRem(18px);
+      font-weight: 700;
+      z-index: 2;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .react-autosuggest__input {
+        width: 100%;
+        height: 30px;
+        padding: 20px 20px;
+        font-family: Helvetica, sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        border: 1px solid #aaa;
+        border-radius: 20px;
+      }
+
+      .react-autosuggest__suggestions-container--open {
+        display: block;
+        margin-block-start: 8px;
+        background-color: white;
+        border-radius: 20px;
+        padding: 5px, 10px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        max-height: 240px;
+        box-shadow: #adadad;
+        position: absolute;
+        width: 125%;
+        list-style-type: none;
+        font-size: pxToRem(18px);
+        font-weight: 700;
+        z-index: 2;
+      }
+  }
+
+  @media (max-width: 420px) {
+    .react-autosuggest__input {
+        width: 150%;
+        height: 30px;
+        padding: 20px 20px;
+        font-family: Helvetica, sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        border: 1px solid #aaa;
+        border-radius: 20px;
+      }
+
+      .react-autosuggest__suggestions-container--open {
+        display: block;
+        margin-block-start: 8px;
+        background-color: white;
+        border-radius: 20px;
+        padding: 5px, 10px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        max-height: 240px;
+        box-shadow: #adadad;
+        position: absolute;
+        width: 110%;
+        list-style-type: none;
+        font-size: pxToRem(18px);
+        font-weight: 700;
+        z-index: 2;
+      }
+  }
+
+  @media (max-width: 700px) {
+    .react-autosuggest__input {
+      width: 265%;
+      height: 30px;
+      padding: 20px 20px;
+      font-family: Helvetica, sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      border: 1px solid #aaa;
+      border-radius: 20px;
+    }
+
+    .react-autosuggest__suggestions-container--open {
+      display: block;
+      margin-block-start: 8px;
+      background-color: white;
+      border-radius: 20px;
+      padding: 5px, 10px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      max-height: 200px;
+      box-shadow: #adadad;
+      position: absolute;
+      width: 270%;
+      list-style-type: none;
+      font-size: 16px;
+      font-weight: 700;
+      z-index: 2;
+    }
+  }
