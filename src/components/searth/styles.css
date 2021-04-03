@@ -8,8 +8,6 @@ form {
     flex-direction:row;
     padding:2px;
 }
-
-  
 input:focus {
     outline: none;
 }
@@ -67,7 +65,17 @@ input:focus {
     color:white;
     margin-left: -5px;
     margin-top: -0px;
-}
+  }
+  .button-submit img{
+    width: 11px;
+    margin-left: -1.68rem;
+    background-color: #FFF;
+    color: black;
+  }
+
+  .logo_loading {
+      animation: none;
+  }
   .form__field {
     width: 11000%;
   }
@@ -120,7 +128,7 @@ input:focus {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   .form{
     width: 270%;
     margin-left: -80%;

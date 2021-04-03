@@ -44,8 +44,11 @@ const SearthPokemons = () => {
         setVida([])
     }
 
+    
+
     const pokemonHandle = (event) => {
-        const dados = GetPokemon(value)
+        event.preventDefault();
+        const dados = GetPokemon(primeiraLetraMinuscula(value))
         dados.catch((error) => { openErrorNotification('error') })
         dados.then((props) => {
             limparInput()
@@ -65,6 +68,10 @@ const SearthPokemons = () => {
         return lowerCasedCompanies.filter(language =>
             language.startsWith(value.trim().toLowerCase())
         );
+    }
+    function primeiraLetraMinuscula(string) {
+        var nomePokemon = string.charAt(0).toLowerCase() + string.slice(1);
+        return nomePokemon;
     }
 
 

@@ -4,15 +4,9 @@ import { Card } from 'antd';
 import 'antd/dist/antd.css';
 import './styles.css';
 
-import Heart from '../../assests/png/heart.png';
-import Height from '../../assests/png/height.png';
-import Weighing from '../../assests/png/weighing.png';
-
 import typeColors from '../types/pokemonTypes';
 
 const { Meta } = Card;
-
-
 
 const ListPoke = (props) => {
     const { id, name, height, weight, nomeTipoUm, nomeTipoDois, vida } = props;
@@ -57,45 +51,42 @@ const ListPoke = (props) => {
                         <Meta style={{
                             marginLeft: '5%',
                             backgroundColor: '#e4e4e4',
-                            boxShadow: '5px 10px',
                             width: '90%',
-                            borderRadius: '20px',
+                            borderRadius: '10px',
                             color: typeColors[nomeTipoUm.name],
-                            border: '1px solid',
+                            border: 'solid',
                             borderColor: typeColors[nomeTipoUm.name],
+                            padding: '0.3rem'
                         }} title={<strong>{nome}</strong>} />
                         <div className="height-div"
                             style={{
                                 textAlign: 'left',
-                                marginLeft: '10px',
+                                marginLeft: '2px',
                                 marginTop: '20px'
                             }}>
-                            <h3 style={{ marginTop: '40px' }}>
-                                <img alt="heart" src={Heart} style={{ width: '15%' }} />
-                                <strong> {vida + ' hp'}</strong>
-                            </h3>
-                            <h3>
-                                <img alt="heart" src={Weighing} style={{ width: '15%' }} />
-                                <strong> {peso + ' kg'}</strong>
-                            </h3>
-                            <h3 style={{ marginBottom: '40px' }}>
-                                <img alt="heart" src={Height} style={{ width: '15%' }} />
-                                <strong> {tamanho + ' m'}</strong>
-                            </h3>
+                            <div className="circle-hp">
+                                <strong style={{ boxShadow: `0px 2px 15px 0px ${typeColors[nomeTipoUm.name]}` }} className="card-hp">{vida+ 'hp'}</strong>
+                            </div>
+                            <div className="circle-peso">
+                                <strong style={{ boxShadow: `0px 2px 15px 0px ${typeColors[nomeTipoUm.name]}` }} className="card-peso"> {peso + 'kg'}</strong>
+                            </div>
+                            <div className="circle-tamanho">
+                                <strong style={{ boxShadow: `0px 2px 15px 0px ${typeColors[nomeTipoUm.name]}` }} className="card-tamanho"> {tamanho + 'm'}</strong>
+                            </div>
                         </div>
                         <div className="origem-main" style={{ textAlign: 'center' }}>
                             <h5>
                                 <label style={{
                                     backgroundColor: typeColors[nomeTipoUm.name],
-                                    borderRadius: '20px',
-                                    padding: '8px'
+                                    borderRadius: '10px',
+                                    padding: '0.5rem'
                                 }}>
                                     {nomeTipoUm.name}
                                 </label>
                                 <label style={{
                                     backgroundColor: typeColors[nomeTipoDois.name],
-                                    borderRadius: '20px',
-                                    padding: '8px',
+                                    borderRadius: '10px',
+                                    padding: '0.5rem',
                                     marginLeft: '5px'
                                 }}>
                                     {nomeTipoDois.name}
@@ -119,7 +110,7 @@ const ListPoke = (props) => {
                     style={{
                         width: '100%',
                         marginTop: '10px',
-                        backgroundColor: '#FFF',
+                        backgroundColor: 'white',
                         borderRadius: '20px',
                         borderStyle: 'solid',
                         borderColor: typeColors[nomeTipoUm.name],
@@ -130,38 +121,35 @@ const ListPoke = (props) => {
                     <Meta style={{
                         marginLeft: '5%',
                         backgroundColor: '#e4e4e4',
-                        boxShadow: '5px 10px',
                         width: '90%',
-                        borderRadius: '20px',
+                        borderRadius: '10px',
                         color: typeColors[nomeTipoUm.name],
-                        border: '1px solid',
+                        border: 'solid',
                         borderColor: typeColors[nomeTipoUm.name],
+                        padding: '0.3rem'
                     }} title={<strong>{nome}</strong>} />
 
 
                     <div className="height-div" style={{
-                        textAlign: 'left', marginLeft: '10px', marginTop: '20px',
+                        textAlign: 'left', marginLeft: '2px', marginTop: '20px',
                         borderColor: 'black', borderRadius: '20px'
                     }}>
-                        <h3 style={{ marginTop: '40px' }}>
-                            <img alt="heart" src={Heart} style={{ width: '15%' }} />
-                            <strong> {vida + ' hp'}</strong>
-                        </h3>
-                        <h3>
-                            <img alt="heart" src={Weighing} style={{ width: '15%' }} />
-                            <strong> {peso + ' kg'}</strong>
-                        </h3>
-                        <h3 style={{ marginBottom: '40px' }}>
-                            <img alt="heart" src={Height} style={{ width: '15%' }} />
-                            <strong> {tamanho + ' m'}</strong>
-                        </h3>
+                        <div className="circle-hp">
+                            <strong style={{ boxShadow: `0px 2px 15px 0px ${typeColors[nomeTipoUm.name]}` }} className="card-hp">{vida + ' hp'}</strong>
+                        </div>
+                        <div className="circle-peso">
+                            <strong style={{ boxShadow: `0px 2px 15px 0px ${typeColors[nomeTipoUm.name]}` }} className="card-peso"> {peso + ' kg'}</strong>
+                        </div>
+                        <div className="circle-tamanho">
+                            <strong style={{ boxShadow: `0px 2px 15px 0px ${typeColors[nomeTipoUm.name]}` }} className="card-tamanho"> {tamanho + ' m'}</strong>
+                        </div>
                     </div>
                     <div className="origem-main" style={{ textAlign: 'center' }}>
                         <h5>
                             <label style={{
                                 backgroundColor: typeColors[nomeTipoUm.name],
-                                borderRadius: '20px',
-                                padding: '8px'
+                                borderRadius: '10px',
+                                padding: '0.5rem'
                             }}>
                                 {nomeTipoUm.name}
                             </label>

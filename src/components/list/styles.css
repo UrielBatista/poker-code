@@ -5,14 +5,324 @@
     width: 120px;
 }
 
-@media (max-width: 320px) {
-    .card-pokemon {
-        background-color: black;
+.circle-hp {
+    margin-top: 40px;
+    display: inline-block;
+    position: relative;
+}
+.circle-peso {
+    margin-left: 21%;
+    display: inline-block;
+    position: relative;
+}
+.circle-tamanho {
+    margin-left: 21%;
+    display: inline-block;
+    position: relative;
+}
+.card-hp{
+    font-size: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 10px;
+}
+.card-peso{
+    font-size: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 10px;
+}
+.card-tamanho{
+    font-size: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 320px) {
+    .circle-hp {
+        /* margin-left: -8%; */
+        margin-top: 40px;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-peso {
+        margin-left: 6%;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-tamanho {
+        margin-left: 6%;
+        margin-bottom: 40px;
+        display: inline-block;
+        position: relative;
+    } 
+    .card-hp{
+        font-size: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        margin-bottom: 10px;
+    }
+    .card-peso{
+        font-size: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        margin-bottom: 10px;
+    }
+    .card-tamanho{
+        font-size: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        margin-bottom: 10px;
     }
 }
 
-@media (max-width: 360px) {
-    .card-pokemon {
-        background-color: black;
+@media (min-width: 360px) {
+    .circle-hp {
+        margin-top: 40px;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-peso {
+        margin-left: 5%;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-tamanho {
+        margin-left: 5%;
+        margin-bottom: 40px;
+        display: inline-block;
+        position: relative;
+    }
+    .card-hp{
+        font-size: 12px;
+        width: 50px;
+        height: 50px;
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        margin-bottom: 10px;
+    }
+    .card-peso{
+        font-size: 12px;
+        width: 50px;
+        height: 50px;
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        margin-bottom: 10px;
+    }
+    .card-tamanho{
+        font-size: 12px;
+        width: 50px;
+        height: 50px;
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 370px) {
+    .circle-hp {
+        margin-top: 40px;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-peso {
+        margin-left: 8%;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-tamanho {
+        margin-left: 8%;
+        margin-bottom: 40px;
+        display: inline-block;
+        position: relative;
+    }
+}
+
+@media (min-width: 400px) {
+    .circle-hp {
+        margin-top: 40px;
+        margin-left: 3%;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-peso {
+        margin-left: 11%;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-tamanho {
+        margin-left: 11%;
+        margin-bottom: 40px;
+        display: inline-block;
+        position: relative;
+    }
+}
+
+@media (min-width: 500px) {
+    .circle-hp {
+        margin-top: 40px;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-peso {
+        margin-left: 18%;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-tamanho {
+        margin-left: 18%;
+        display: inline-block;
+        position: relative;
+    }
+}
+
+@media (min-width: 700px) {
+    .circle-hp {
+        margin-top: 40px;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-peso {
+        margin-left: 28%;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-tamanho {
+        margin-left: 28%;
+        display: inline-block;
+        position: relative;
+    }
+}
+
+@media (min-width: 900px) {
+    .circle-hp {
+        margin-top: 40px;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-peso {
+        margin-left: 33%;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-tamanho {
+        margin-left: 33%;
+        display: inline-block;
+        position: relative;
+    }
+}
+
+@media (min-width: 1000px) {
+    .circle-hp {
+        margin-top: 40px;
+        margin-left: -2%;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-peso {
+        margin-left: 8%;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-tamanho {
+        margin-left: 8%;
+        display: inline-block;
+        position: relative;
+    }
+}
+
+@media (min-width: 1100px) {
+    .circle-hp {
+        margin-top: 40px;
+        margin-left: -2%;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-peso {
+        margin-left: 14%;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-tamanho {
+        margin-left: 14%;
+        display: inline-block;
+        position: relative;
+    }
+}
+
+@media (min-width: 1360px) {
+    .circle-hp {
+        margin-top: 40px;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-peso {
+        margin-left: 22%;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-tamanho {
+        margin-left: 22%;
+        display: inline-block;
+        position: relative;
+    }
+}
+
+@media (min-width: 1920px) {
+    .circle-hp {
+        margin-left: 0.5%;
+        margin-top: 40px;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-peso {
+        margin-left: 31%;
+        display: inline-block;
+        position: relative;
+    }
+    .circle-tamanho {
+        margin-left: 31%;
+        display: inline-block;
+        position: relative;
     }
 }

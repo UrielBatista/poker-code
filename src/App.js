@@ -1,11 +1,9 @@
 import SearthPokemons from './components/searth/searthPokemons';
 import DevTools from './devTools';
 
-import ImageIntro from './assests/png/intro.png'
+import ImageIntro from './assests/png/intro.png';
 
 import './App.css';
-
-
 
 
 function App() {
@@ -17,6 +15,7 @@ function App() {
         </div>
         <SearthPokemons />
         <DevTools />
+
       </header>
     </div>
   );

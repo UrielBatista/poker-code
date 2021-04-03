@@ -96,6 +96,7 @@
   }
 
   @media (max-width: 320px) {
+    
     .react-autosuggest__suggestions-container--open {
       display: block;
       margin-block-start: 8px;
@@ -177,9 +178,9 @@
       }
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 1000px) {
     .react-autosuggest__input {
-      width: 265%;
+      width: 270%; /*140*/
       height: 30px;
       padding: 20px 20px;
       font-family: Helvetica, sans-serif;
@@ -200,7 +201,7 @@
       max-height: 200px;
       box-shadow: #adadad;
       position: absolute;
-      width: 270%;
+      width: 268%;
       list-style-type: none;
       font-size: 16px;
       font-weight: 700;
