@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card } from 'antd';
 
 import 'antd/dist/antd.css';
 import './styles.css';
@@ -14,8 +13,8 @@ const ListPoke = (props) => {
     if (!id) {
         return (
             <div className="user_card" style={{ backgroundColor: '#1cabf2', boxShadow: 'none', marginTop: '-25px' }}>
-                <div class="pokebola">
-                    <div class="pokebola-botao"></div>
+                <div className="pokebola">
+                    <div className="pokebola-botao"></div>
                 </div>
             </div>
         )
