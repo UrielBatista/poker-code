@@ -3,10 +3,9 @@ import { Card } from 'antd';
 
 import 'antd/dist/antd.css';
 import './styles.css';
+import './poker_styles.css';
 
 import typeColors from '../types/pokemonTypes';
-
-const { Meta } = Card;
 
 const ListPoke = (props) => {
     const { id, name, height, weight, nomeTipoUm, nomeTipoDois, vida } = props;
@@ -14,7 +13,11 @@ const ListPoke = (props) => {
 
     if (!id) {
         return (
-            <div></div>
+            <div className="user_card" style={{ backgroundColor: '#1cabf2', boxShadow: 'none', marginTop: '-25px' }}>
+                <div class="pokebola">
+                    <div class="pokebola-botao"></div>
+                </div>
+            </div>
         )
     }
 
@@ -32,132 +35,112 @@ const ListPoke = (props) => {
     // Card com dois tipos
     if (nomeTipoDois.name) {
         return (
-            <div className="card">
-                <form className="form">
-                    <Card
-                        hoverable
-                        style={{
-                            width: '100%',
-                            marginTop: '10px',
-                            backgroundColor: '#FFF',
-                            borderRadius: '20px',
-                            borderStyle: 'solid',
-                            borderColor: typeColors[nomeTipoUm.name],
-                            borderWidth: '10px'
-                        }}
-                        cover={<img alt="img-pokemon" className="image-api"
-                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`} />}
-                    >
-                        <Meta style={{
+            <div className="user_card" style={{
+                borderRadius: '20px',
+                borderStyle: 'solid',
+                borderColor: typeColors[nomeTipoUm.name],
+                borderWidth: '10px'
+            }}>
+                <div className="d-flex justify-content-center">
+                    <div className="brand_logo_container" style={{
+                        borderRadius: '100px',
+                        borderStyle: 'solid',
+                        borderColor: typeColors[nomeTipoUm.name],
+                        borderWidth: '10px'
+                    }}>
+                        <img alt="img-pokemon" className="image-api"
+                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
+                        />
+                    </div>
+                </div>
+                <div className="d-flex justify-content-center form_container">
+                    <form>
+                        <button type="button" name="button" className="btn name_btn" style={{
                             marginLeft: '5%',
                             backgroundColor: '#e4e4e4',
+                            marginBottom: '15px',
                             width: '90%',
                             borderRadius: '10px',
-                            color: typeColors[nomeTipoUm.name],
                             border: 'solid',
                             borderColor: typeColors[nomeTipoUm.name],
                             padding: '0.3rem'
-                        }} title={<strong>{nome}</strong>} />
-                        <div className="height-div"
-                            style={{
-                                textAlign: 'left',
-                                marginLeft: '2px',
-                                marginTop: '20px'
-                            }}>
-                            <div className="circle-hp">
-                                <strong style={{ boxShadow: `0px 2px 15px 0px ${typeColors[nomeTipoUm.name]}` }} className="card-hp">{vida+ 'hp'}</strong>
-                            </div>
-                            <div className="circle-peso">
-                                <strong style={{ boxShadow: `0px 2px 15px 0px ${typeColors[nomeTipoUm.name]}` }} className="card-peso"> {peso + 'kg'}</strong>
-                            </div>
-                            <div className="circle-tamanho">
-                                <strong style={{ boxShadow: `0px 2px 15px 0px ${typeColors[nomeTipoUm.name]}` }} className="card-tamanho"> {tamanho + 'm'}</strong>
-                            </div>
+                        }}>{<strong>{nome}</strong>}</button>
+                        <button type="button" name="button" className="btn login_btn">{vida + 'Hp'}</button>
+                        <div className="d-flex justify-content-center mt-3 login_container">
+                            <button type="button" name="button" className="btn login_btn">{peso + 'kg'}</button>
+                            <button type="button" name="button" className="btn login_btn">{tamanho + 'm'}</button>
                         </div>
-                        <div className="origem-main" style={{ textAlign: 'center' }}>
-                            <h5>
-                                <label style={{
-                                    backgroundColor: typeColors[nomeTipoUm.name],
-                                    borderRadius: '10px',
-                                    padding: '0.5rem'
-                                }}>
-                                    {nomeTipoUm.name}
-                                </label>
-                                <label style={{
-                                    backgroundColor: typeColors[nomeTipoDois.name],
-                                    borderRadius: '10px',
-                                    padding: '0.5rem',
-                                    marginLeft: '5px'
-                                }}>
-                                    {nomeTipoDois.name}
-                                </label>
-                            </h5>
-                            <br />
-                        </div>
-                    </Card>
-                </form>
+                        <br></br>
+                        <button type="button" name="button" style={{
+                            backgroundColor: typeColors[nomeTipoUm.name],
+                            borderRadius: '10px',
+                            padding: '0.5rem',
+                            border: 'none'
+                        }}>{nomeTipoUm.name}</button>
+                        <button type="button" name="button" style={{
+                            backgroundColor: typeColors[nomeTipoDois.name],
+                            borderRadius: '10px',
+                            padding: '0.5rem',
+                            marginLeft: '5px',
+                            border: 'none'
+
+                        }}>{nomeTipoDois.name}</button>
+                    </form>
+                </div>
+
+
             </div>
         )
     }
 
     // Card com apenas um tipo
     return (
-        <div className="card-main">
-            <form className="form">
-                <Card
-                    className="card-pokemon"
-                    hoverable
-                    style={{
-                        width: '100%',
-                        marginTop: '10px',
-                        backgroundColor: 'white',
-                        borderRadius: '20px',
-                        borderStyle: 'solid',
-                        borderColor: typeColors[nomeTipoUm.name],
-                        borderWidth: '10px'
-                    }}
-                    cover={<img alt="img-pokemon" className="image-api" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`} />}
-                >
-                    <Meta style={{
+        <div className="user_card" style={{
+            borderRadius: '20px',
+            borderStyle: 'solid',
+            borderColor: typeColors[nomeTipoUm.name],
+            borderWidth: '10px'
+        }}>
+            <div className="d-flex justify-content-center">
+                <div className="brand_logo_container" style={{
+                    borderRadius: '100px',
+                    borderStyle: 'solid',
+                    borderColor: typeColors[nomeTipoUm.name],
+                    borderWidth: '10px'
+                }}>
+                    <img alt="img-pokemon" className="image-api"
+                        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
+                    />
+                </div>
+            </div>
+            <div className="d-flex justify-content-center form_container">
+                <form>
+                    <button type="button" name="button" className="btn name_btn" style={{
                         marginLeft: '5%',
                         backgroundColor: '#e4e4e4',
+                        marginBottom: '15px',
                         width: '90%',
                         borderRadius: '10px',
-                        color: typeColors[nomeTipoUm.name],
                         border: 'solid',
                         borderColor: typeColors[nomeTipoUm.name],
                         padding: '0.3rem'
-                    }} title={<strong>{nome}</strong>} />
+                    }}>{<strong>{nome}</strong>}</button>
+                    <button type="button" name="button" className="btn login_btn">{vida + 'hp'}</button>
+                    <div className="d-flex justify-content-center mt-3 login_container">
+                        <button type="button" name="button" className="btn login_btn">{peso + 'kg'}</button>
+                        <button type="button" name="button" className="btn login_btn">{tamanho + 'm'}</button>
+                    </div>
+                    <br></br>
+                    <button type="button" name="button" style={{
+                        backgroundColor: typeColors[nomeTipoUm.name],
+                        borderRadius: '10px',
+                        padding: '0.5rem',
+                        border: 'none'
+                    }}>{nomeTipoUm.name}</button>
+                </form>
+            </div>
 
 
-                    <div className="height-div" style={{
-                        textAlign: 'left', marginLeft: '2px', marginTop: '20px',
-                        borderColor: 'black', borderRadius: '20px'
-                    }}>
-                        <div className="circle-hp">
-                            <strong style={{ boxShadow: `0px 2px 15px 0px ${typeColors[nomeTipoUm.name]}` }} className="card-hp">{vida + ' hp'}</strong>
-                        </div>
-                        <div className="circle-peso">
-                            <strong style={{ boxShadow: `0px 2px 15px 0px ${typeColors[nomeTipoUm.name]}` }} className="card-peso"> {peso + ' kg'}</strong>
-                        </div>
-                        <div className="circle-tamanho">
-                            <strong style={{ boxShadow: `0px 2px 15px 0px ${typeColors[nomeTipoUm.name]}` }} className="card-tamanho"> {tamanho + ' m'}</strong>
-                        </div>
-                    </div>
-                    <div className="origem-main" style={{ textAlign: 'center' }}>
-                        <h5>
-                            <label style={{
-                                backgroundColor: typeColors[nomeTipoUm.name],
-                                borderRadius: '10px',
-                                padding: '0.5rem'
-                            }}>
-                                {nomeTipoUm.name}
-                            </label>
-                        </h5>
-                        <br />
-                    </div>
-                </Card>
-            </form>
         </div>
     )
 

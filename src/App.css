@@ -29,7 +29,7 @@
 
 .image-intro {
   margin-bottom: 10px;
-  width: 20%;
+  width: 125px;
 }
 
 .App-link {
@@ -45,7 +45,7 @@
   }
 }
 
-@media (max-width: 360px) {
+/* @media (max-width: 360px) {
   .image-intro {
     margin-bottom: 10px;
     width: 50%;
@@ -57,4 +57,4 @@
     margin-bottom: 10px;
     width: 50%;
   }
-}
+} */

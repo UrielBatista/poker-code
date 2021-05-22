@@ -1,153 +1,21 @@
-@import 'https://raw.githubusercontent.com/jonathantneal/system-font-css/gh-pages/system-font.css';
-.searth {
-    margin-top: 0%;
-    width: 25%;
+.searth{
+  width: 120px;
+  margin-right: 220px;
 }
-form {
-    display:flex;
-    flex-direction:row;
-    padding:2px;
-}
-input:focus {
-    outline: none;
-}
-  
-.button-submit {
-    color:white;
-    margin-left: 25%;
-    margin-top: -0px;
-    
+.logo_loading{
+  width: 35px;
+  margin-top: -85px;
+  margin-left: 340px;
 }
 
-.button-submit img{
-  width: 30px;
-  -webkit-transition: -webkit-transform .5s ease;
-  transition: transform .5s ease;
-}
-
-.button-submit:hover img{
-  -webkit-transform: scale(5.1);
-  transform: scale(2.1);
-}
-
-.logo_loading {
-    animation: Poke-logo-spin 10s linear;
-}
-
-
-@keyframes Poke-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 420px){
+  .searth{
+    width: 80px;
+    margin-right: 150px;
   }
-  to {
-    transform: rotate(2520deg);
-  }
-}
-
-@media (max-width: 1920px){
-  .button-submit {
-    color:white;
-    margin-left: 60%;
-    margin-top: -0px;
-    
-  }
-}
-
-
-@media (max-width: 320px) {
-  .form{
-    width: 270%;
-    margin-left: -80%;
-    margin-top: 10px;
-  }
-  .button-submit {
-
-    color:white;
-    margin-left: -5px;
-    margin-top: -0px;
-  }
-  .button-submit img{
-    width: 11px;
-    margin-left: -1.68rem;
-    background-color: #FFF;
-    color: black;
-  }
-
-  .logo_loading {
-      animation: none;
-  }
-  .form__field {
-    width: 11000%;
-  }
-}
-
-@media (max-width: 360px) {
-  .form{
-    width: 270%;
-    margin-left: -80%;
-    margin-top: 10px;
-  }
-  .button-submit {
-
-    color:white;
-    margin-left: 5px;
-    margin-top: -0px;
-}
-  .form__field {
-    width: 11000%;
-  }
-  .button-submit {
-
-    color:white;
-    margin-top: 5px;
-    
-  }
-}
-
-@media (max-width: 420px) {
-  .form{
-    width: 270%;
-    margin-left: -80%;
-    margin-top: 10px;
-  }
-  .button-submit {
-
-    color:white;
-    margin-left: 5px;
-    margin-top: -0px;
-}
-  .form__field {
-    width: 11000%;
-  }
-  .button-submit {
-
-    color:white;
-    margin-left: 10%;
-    margin-top: 5px;
-    
-  }
-}
-
-@media (max-width: 1000px) {
-  .form{
-    width: 270%;
-    margin-left: -80%;
-    margin-top: 10px;
-  }
-  .button-submit {
-
-    color:white;
-    margin-left: 5px;
-    margin-top: -0px;
-}
-  .form__field {
-    width: 11000%;
-  }
-  .button-submit {
-
-    color:white;
-    margin-left: 60%;
-    margin-top: 5px;
-    
+  .logo_loading{
+    width: 35px;
+    margin-top: -75px;
+    margin-left: 100px;
   }
 }
