@@ -2,9 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## PrintScreen de exemplo do projeto
+## PrintScreen de exemplo do projeto (Web Version)
 ![image](https://user-images.githubusercontent.com/49211381/119280092-1dc1d500-bc06-11eb-85cc-7b3dcd7a637b.png)
 
+## PrintScreen de exemplo do projeto (Mobile Version)
+![image](https://user-images.githubusercontent.com/49211381/119280174-7c874e80-bc06-11eb-8366-2c2a5c6a7d19.png)
 
 ## Available Scripts
 
