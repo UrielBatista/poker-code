@@ -1,0 +1,21 @@
+.searth{
+  width: 120px;
+  margin-right: 220px;
+}
+.logo_loading{
+  width: 35px;
+  margin-top: -85px;
+  margin-left: 340px;
+}
+
+@media (max-width: 420px){
+  .searth{
+    width: 80px;
+    margin-right: 150px;
+  }
+  .logo_loading{
+    width: 35px;
+    margin-top: -75px;
+    margin-left: 100px;
+  }
+}
