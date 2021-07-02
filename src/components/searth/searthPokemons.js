@@ -8,6 +8,7 @@ import { notification } from 'antd';
 
 import 'antd/dist/antd.css';
 import '../list/poker_styles.css';
+import '../list/loading_poker.css';
 import './styles.css';
 import './suggest.css';
 
@@ -48,12 +49,11 @@ const SearthPokemons = () => {
     }
 
 
-
     const pokemonHandle = (event) => {
         setLoading(true)
         setTimeout(() => {
             setLoading(false);
-        }, 3500)
+        }, 4000)
 
         event.preventDefault();
         const dados = GetPokemon(primeiraLetraMinuscula(value))
@@ -69,7 +69,7 @@ const SearthPokemons = () => {
 
         })
     }
-    
+
     const lowerCasedCompanies = pokemons.map(x => x.name.toLowerCase());
 
     function getSuggestions(value) {
@@ -96,7 +96,7 @@ const SearthPokemons = () => {
                         setLoading(true)
                         setTimeout(() => {
                             setLoading(false);
-                        }, 3500)
+                        }, 4000)
 
                         setValue(suggestionValue);
                         const data = GetPokemon(suggestionValue)
@@ -109,7 +109,6 @@ const SearthPokemons = () => {
 
                         }).catch((error) => {
                             // console.log(error)
-
                         })
                     }}
                     getSuggestionValue={suggestion => suggestion}
@@ -131,18 +130,20 @@ const SearthPokemons = () => {
                         onClick={pokemonHandle} />
                 </div>
             </form>
-            { loading ?
+            {loading ?
 
-                <div className="user_card" style={{ backgroundColor: '#1cabf2', boxShadow: 'none', marginTop: '-25px' }}>
-                    <div className="pokebola">
-                        <div className="pokebola-botao"></div>
+                <div className="loading_user" style={{ backgroundColor: '#1cabf2', boxShadow: 'none', marginTop: '-25px' }}>
+                    <div className="centralizar_poker">
+                        <div className="loading_poker">
+                            <div className="loading_poker-button"></div>
+                        </div>
                     </div>
                 </div>
                 :
                 <ListPoke {...poke}
                     nomeTipoUm={nomeTipoUm}
                     nomeTipoDois={nomeTipoDois}
-                    vida={vida}/>
+                    vida={vida} />
             }
         </div>
     )

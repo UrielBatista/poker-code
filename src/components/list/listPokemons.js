@@ -13,9 +13,11 @@ const ListPoke = (props) => {
 
     if (!typeImage[nomeTipoUm.name]) {
         return (
-            <div className="user_card" style={{ backgroundColor: '#1cabf2', boxShadow: 'none', marginTop: '-25px' }}>
+            <div className="user_poker" style={{ backgroundColor: '#1cabf2', boxShadow: 'none', marginTop: '-25px' }}>
+                <div className="center-poker">
                 <div className="pokebola">
                     <div className="pokebola-botao"></div>
+                </div>
                 </div>
             </div>
         )
@@ -129,8 +131,8 @@ const ListPoke = (props) => {
                     }}>{<strong>{nome}</strong>}</button>
                     <button type="button" name="button" className="btn login_btn">{vida + 'hp'}</button>
                     <div className="d-flex justify-content-center mt-3 login_container">
-                        <button type="button" name="button" className="btn login_btn">{peso + 'kg'}</button>
-                        <button type="button" name="button" className="btn login_btn">{tamanho + 'm'}</button>
+                        <button type="button" name="button" className="btn login_btn_kg">{peso + 'kg'}</button>
+                        <button type="button" name="button" className="btn login_btn_m">{tamanho + 'm'}</button>
                     </div>
                     <br></br>
                     <button type="button" name="button" style={{
