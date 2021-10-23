@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Project Objective
+
+The objective is just to show the card of the researched pokemons, as well as some attributes related to it, follows an example of a gif.
+![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+
 ## Available Scripts
 
 In the project directory, you can run:
