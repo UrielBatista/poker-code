@@ -5,7 +5,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Project Objective
 
 The objective is just to show the card of the researched pokemons, as well as some attributes related to it, follows an example of a gif.
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+
+![Alt Text](https://github.com/UrielBatista/poker-code/blob/main/src/assests/png/PokerdexGif.gif?raw=true)
 
 ## Available Scripts
 
