@@ -2,7 +2,8 @@
     display: inline-block;
     width: 300px;
     height: 230px;
-    perspective: 1000px; 
+    perspective: 1000px;
+    
   }
   
   .flipper {
@@ -11,6 +12,7 @@
     height: 100%;
     transition: transform 0.8s;
     transform-style: preserve-3d;
+    animation: intro 2s;
   }
   
   #switch{
@@ -45,6 +47,12 @@
     transform: rotateY(180deg);
   }
 
+  .progress-bar {
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-bottom: 35px;
+  }
+
   .progress {
       color: white;
   }
@@ -65,7 +73,8 @@
         display: inline-block;
         width: 200px;
         height: 200px;
-        perspective: 1000px; 
+        perspective: 1000px;
+        animation: intro 2s;
       }
     .round-image {
         width: 100px;
@@ -74,6 +83,13 @@
         margin-bottom: 5px;
         border-radius: 100px;
     }
+
+    .progress-bar {
+      margin-top: 20px;
+      margin-left: 25px;
+      margin-bottom: 30px;
+    }
+
     .progress {
         color: white;
     }
@@ -92,18 +108,26 @@
   @media(max-width: 430px){
     .flip-container {
         display: inline-block;
-        width: 250px;
+        width: 295px;
         height: 200px;
-        perspective: 1000px; 
+        perspective: 1000px;
+        animation: intro 2s;
       }
     
     .round-image {
         width: 100px;
-        margin-left: 75px;
+        margin-left: 100px;
         margin-top: 10px;
         margin-bottom: 5px;
         border-radius: 100px;
     }
+
+    .progress-bar {
+      margin-top: 20px;
+      margin-left: 25px;
+      margin-bottom: 30px;
+    }
+    
     .progress {
         color: white;
     }
@@ -118,4 +142,9 @@
         margin-left: 100px;
         margin-bottom: 5px;
     }
+  }
+
+  @keyframes intro {
+    0%   {top:-400px;}
+    100% {top:0px;}
   }
