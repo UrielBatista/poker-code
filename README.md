@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Project Objetive
+
+![Alt Text](https://github.com/UrielBatista/poker-code/blob/main/src/assests/png/PokerdexGif.gif?raw=true)
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -1,0 +1,102 @@
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+    
+  .loading_user{
+      width: 350px;
+      height: 350px;
+      margin-top: 55px;
+      margin-left: 10px;
+  }
+  .centralizar_poker{
+      margin-top: 150px;
+      
+  }
+
+  .loading_poker {
+    position: relative;
+      width: 150px;
+      height: 150px;
+      background-color: #FFF;
+      border: 5px solid #000;
+      border-radius: 50%;
+      box-shadow: inset -10px 10px 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      margin: 20px auto;
+      animation: fall .25s ease-in-out,
+               shake 4.10s cubic-bezier(.36,.07,.19,.97) 3;
+  }
+  .loading_poker {
+    transform: rotate(-90deg);
+  }
+  
+  .loading_poker:before, .loading_poker:after {
+      content: "";
+      position: absolute;
+      
+  }
+  .loading_poker:before {
+    background-color: #EF4036;
+    width: 50%;
+    height: 100%;
+    border-left: 15px solid #000;
+  }
+  .loading_poker:after {
+    top: calc(50% - 10000px);
+    width: 100%;
+    height: 20px;
+    background-color: #000;
+  }
+  .loading_poker-button {
+    width: 50px;
+    height: 50px;
+    background-color: #FFF;
+    border: 10px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    z-index: 10;
+  }
+  .loading_poker-button::before{
+    content: "";
+    position: absolute;
+    top: calc(50% - 10px);
+    left: calc(50% - 10px);
+    width: 20px;
+    height: 20px;
+    background-color: #FFF;
+    border: 3px solid #000;
+    border-radius: 50%;
+    z-index: 10;
+  }
+
+  @media(max-width: 430px){
+    .loading_user{
+      width: 350px;
+      height: 350px;
+      margin-top: 55px;
+      margin-left: -40px;
+    }
+  }
+  
+  @keyframes blink {
+    from { background: #eee;}
+    to { background: #e74c3c; }
+  }
+  @keyframes shake {
+    0 { transform: translate(0, 0) rotate(-90deg); }
+    20% { transform: translate(-10px, 0) rotate(-150deg); }
+    30% { transform: translate(10px, 0) rotate(-100deg); }
+    50% { transform: translate(-10px, 0) rotate(-150deg); }
+    60% { transform: translate(10px, 0) rotate(-100deg); }
+    100% { transform: translate(0, 0) rotate(-90deg) scale(6);}
+  }
+  @keyframes fall {
+    0% { top: -200px }
+    60% { top: 0 }
+    80% { top: -20px }
+    100% { top: 0 }
+  }

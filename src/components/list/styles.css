@@ -1,225 +1,121 @@
-	/* Coded with love by Mutiullah Samim */
-    body,
-    html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        background: #60a3bc !important;
-    }
-    .user_card {
-        height: 400px;
-        width: 350px;
-        margin-top: 55px;
-        margin-right: -50px;
-        margin-bottom: auto;
-        background: #ffffff;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        padding: 10px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        border-radius: 5px;
+.flip-container {
+    display: inline-block;
+    width: 300px;
+    height: 230px;
+    perspective: 1000px; 
+  }
+  
+  .flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  #switch{
+    display: none;
+  }
 
-    }
-    .brand_logo_container {
-        position: absolute;
-        height: 170px;
-        width: 170px;
-        top: -75px;
-        border-radius: 50%;
-        background: url("C:\Users\Uriel\Documents\projects\pokemon-dev\src\assests\jpg\forest.jpg") center; 
-        padding: 10px;
-        text-align: center;
-    }
-    .image-api {
-        width: 125px;
-        margin-top: 5px;
-    }
-    .brand_logo {
-        height: 150px;
-        width: 150px;
-        border-radius: 50%;
-        border: 2px solid white;
-    }
-    .form_container {
-        margin-top: 100px;
-    }
-    .login_btn {
-        width: 45%;
-        background: #c0392b !important;
-        color: white !important;
-        border-radius: 100px;
+  #switch:checked ~ .flip-container .flipper {
+    transform: rotateY(180deg) rotateZ(180deg);
+  }
+
+  .flip-container:nth-child(2) .back, .flip-container:nth-child(3) .back{
+    transform: rotateX(180deg);
+  }
+  
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    filter: brightness(.9) contrast(1);
+  }
+
+  .round-image {
+    width: 100px;
+    margin-left: 100px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 100px;
+  }
+
+  .back {
+    transform: rotateY(180deg);
+  }
+
+  .progress {
+      color: white;
+  }
+
+  .kilo-data {
+    margin-top: 15px;
+    margin-right: 150px;
+  }
+  
+  .tamanho-data {
+      margin-top: -89px;
+      margin-left: 150px;
+      margin-bottom: 5px;
+  }
+
+  @media(max-width: 325px){
+    .flip-container {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        perspective: 1000px; 
+      }
+    .round-image {
+        width: 100px;
+        margin-left: 50px;
+        margin-top: 10px;
         margin-bottom: 5px;
-        margin-left: 5px;
-        border: none;
+        border-radius: 100px;
     }
-    .login_btn:focus {
-        box-shadow: none !important;
-        outline: 0px !important;
+    .progress {
+        color: white;
     }
-    .login_container {
-        padding: 0 2rem;
+  
+    .kilo-data {
+      margin-top: 15px;
+      margin-right: 100px;
     }
-    .input-group-text {
-        background: #c0392b !important;
-        color: white !important;
-        border: 0 !important;
-        border-radius: 0.25rem 0 0 0.25rem !important;
-    }
-    .input_user,
-    .input_pass:focus {
-        box-shadow: none !important;
-        outline: 0px !important;
-    }
-    .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-        background-color: #c0392b !important;
-    }
-    @media(max-width: 325px){
-        .user_card {
-            height: 400px;
-            width: 215px;
-            margin-top: 55px;
-            margin-right: -50px;
-            margin-bottom: auto;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            padding: 10px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            border-radius: 5px;
     
-        }
-        .brand_logo_container {
-            position: absolute;
-            height: 120px;
-            width: 120px;
-            top: -70px;
-            margin-left: 35px;
-            border-radius: 50%;
-            background: url("C:\Users\Uriel\Documents\projects\pokemon-dev\src\assests\jpg\forest.jpg") center;
-            padding: 10px;
-            text-align: center;
-        }
-        .image-api {
-            width: 95px;
-            margin-top: -5px;
-        }
-        .brand_logo {
-            height: 150px;
-            width: 150px;
-            border-radius: 50%;
-            border: 2px solid white;
-        }
-        .form_container {
-            margin-top: 100px;
-        }
-        .login_btn {
-            width: 100%;
-            background: #c0392b !important;
-            color: white !important;
-            border-radius: 100px;
-            margin-bottom: 5px;
-            margin-left: 5px;
-            border: none;
-        }
-        .login_btn:focus {
-            box-shadow: none !important;
-            outline: 0px !important;
-        }
-        .login_container {
-            padding: 0 2rem;
-        }
-        .input-group-text {
-            background: #c0392b !important;
-            color: white !important;
-            border: 0 !important;
-            border-radius: 0.25rem 0 0 0.25rem !important;
-        }
-        .input_user,
-        .input_pass:focus {
-            box-shadow: none !important;
-            outline: 0px !important;
-        }
-        .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-            background-color: #c0392b !important;
-        }
+    .tamanho-data {
+        margin-top: -89px;
+        margin-left: 100px;
+        margin-bottom: 5px;
     }
-    @media(max-width: 430px){
-        .user_card {
-            height: 400px;
-            width: 230px;
-            margin-top: 55px;
-            margin-right: -50px;
-            margin-bottom: auto;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            padding: 10px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            border-radius: 5px;
+  }
+  @media(max-width: 430px){
+    .flip-container {
+        display: inline-block;
+        width: 250px;
+        height: 200px;
+        perspective: 1000px; 
+      }
     
-        }
-        .brand_logo_container {
-            position: absolute;
-            height: 120px;
-            width: 120px;
-            top: -70px;
-            margin-left: 33px;
-            border-radius: 50%;
-            background: url("C:\Users\Uriel\Documents\projects\pokemon-dev\src\assests\jpg\forest.jpg") center;
-            padding: 10px;
-            text-align: center;
-        }
-        .image-api {
-            width: 95px;
-            margin-top: -5px;
-        }
-        .brand_logo {
-            height: 150px;
-            width: 150px;
-            border-radius: 50%;
-            border: 2px solid white;
-        }
-        .form_container {
-            margin-top: 100px;
-        }
-        .login_btn {
-            width: 75%;
-            background: #c0392b !important;
-            color: white !important;
-            border-radius: 100px;
-            margin-bottom: 5px;
-            margin-left: 5px;
-            border: none;
-        }
-        .login_btn:focus {
-            box-shadow: none !important;
-            outline: 0px !important;
-        }
-        .login_container {
-            padding: 0 2rem;
-        }
-        .input-group-text {
-            background: #c0392b !important;
-            color: white !important;
-            border: 0 !important;
-            border-radius: 0.25rem 0 0 0.25rem !important;
-        }
-        .input_user,
-        .input_pass:focus {
-            box-shadow: none !important;
-            outline: 0px !important;
-        }
-        .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-            background-color: #c0392b !important;
-        }
+    .round-image {
+        width: 100px;
+        margin-left: 75px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        border-radius: 100px;
     }
+    .progress {
+        color: white;
+    }
+  
+    .kilo-data {
+      margin-top: 15px;
+      margin-right: 100px;
+    }
+    
+    .tamanho-data {
+        margin-top: -89px;
+        margin-left: 100px;
+        margin-bottom: 5px;
+    }
+  }
