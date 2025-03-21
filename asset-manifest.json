@@ -1,25 +1,15 @@
 {
   "files": {
-    "main.css": "/poker-dex/static/css/main.b8220a79.chunk.css",
-    "main.js": "/poker-dex/static/js/main.24cfe402.chunk.js",
-    "main.js.map": "/poker-dex/static/js/main.24cfe402.chunk.js.map",
-    "runtime-main.js": "/poker-dex/static/js/runtime-main.413d4196.js",
-    "runtime-main.js.map": "/poker-dex/static/js/runtime-main.413d4196.js.map",
-    "static/css/2.98e7ac70.chunk.css": "/poker-dex/static/css/2.98e7ac70.chunk.css",
-    "static/js/2.6ecf9e3d.chunk.js": "/poker-dex/static/js/2.6ecf9e3d.chunk.js",
-    "static/js/2.6ecf9e3d.chunk.js.map": "/poker-dex/static/js/2.6ecf9e3d.chunk.js.map",
+    "main.css": "/poker-dex/static/css/main.18436bdc.css",
+    "main.js": "/poker-dex/static/js/main.84a8d68c.js",
+    "static/media/intro.png": "/poker-dex/static/media/intro.927812cc3986a6110701.png",
+    "static/media/pokeball.png": "/poker-dex/static/media/pokeball.d2a148cc685f62c31ea5.png",
     "index.html": "/poker-dex/index.html",
-    "static/css/2.98e7ac70.chunk.css.map": "/poker-dex/static/css/2.98e7ac70.chunk.css.map",
-    "static/css/main.b8220a79.chunk.css.map": "/poker-dex/static/css/main.b8220a79.chunk.css.map",
-    "static/js/2.6ecf9e3d.chunk.js.LICENSE.txt": "/poker-dex/static/js/2.6ecf9e3d.chunk.js.LICENSE.txt",
-    "static/media/intro.927812cc.png": "/poker-dex/static/media/intro.927812cc.png",
-    "static/media/pokeball.d2a148cc.png": "/poker-dex/static/media/pokeball.d2a148cc.png"
+    "main.18436bdc.css.map": "/poker-dex/static/css/main.18436bdc.css.map",
+    "main.84a8d68c.js.map": "/poker-dex/static/js/main.84a8d68c.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.413d4196.js",
-    "static/css/2.98e7ac70.chunk.css",
-    "static/js/2.6ecf9e3d.chunk.js",
-    "static/css/main.b8220a79.chunk.css",
-    "static/js/main.24cfe402.chunk.js"
+    "static/css/main.18436bdc.css",
+    "static/js/main.84a8d68c.js"
   ]
 }
