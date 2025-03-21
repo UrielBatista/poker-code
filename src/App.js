@@ -1,5 +1,4 @@
 import SearthPokemons from './components/searth/searthPokemons';
-import DevTools from './devTools';
 
 import ImageIntro from './assests/png/intro.png';
 
@@ -14,8 +13,6 @@ function App() {
           <img className="image-intro" src={ImageIntro} alt="intro" />
         </div>
         <SearthPokemons />
-        <DevTools />
-
       </header>
     </div>
   );

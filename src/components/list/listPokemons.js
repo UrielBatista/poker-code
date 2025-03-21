@@ -1,153 +1,95 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import 'antd/dist/antd.css';
 import './styles.css';
 import './poker_styles.css';
-
 import typeColors from '../types/pokemonTypes';
 import typeImage from '../types/typeImages';
 
 const ListPoke = (props) => {
     const { id, name, height, weight, nomeTipoUm, nomeTipoDois, vida } = props;
-    const url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
+    const url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
 
-    if (!typeImage[nomeTipoUm.name]) {
+    // Estado para controlar se a imagem foi carregada
+    const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+    if (!typeImage[nomeTipoUm.name] || !id) {
         return (
             <div className="user_poker" style={{ backgroundColor: '#1cabf2', boxShadow: 'none', marginTop: '-25px' }}>
                 <div className="center-poker">
-                <div className="pokebola">
-                    <div className="pokebola-botao"></div>
-                </div>
+                    <div className="pokebola">
+                        <div className="pokebola-botao"></div>
+                    </div>
                 </div>
             </div>
-        )
+        );
     }
 
-    let tamanho = height;
+    let tamanho = height < 10 ? `0.${height}` : height / 10;
     let peso = weight / 10;
     let nome = name[0].toUpperCase() + name.slice(1);
 
-    if (tamanho < 10) {
-        tamanho = '0.' + tamanho
-    }
-    if (tamanho >= 10) {
-        tamanho = tamanho / 10
-    }
-
-    // Card com dois tipos
-    if (nomeTipoDois.name) {
-        return (
-            <div className="user_card" style={{
-                borderRadius: '20px',
-                borderStyle: 'solid',
-                borderColor: typeColors[nomeTipoUm.name],
-                borderWidth: '10px'
-            }}>
-                <div className="d-flex justify-content-center">
-
-                    <div className="brand_logo_container" style={{
-                        borderRadius: '100px',
-                        borderStyle: 'solid',
-                        borderColor: typeColors[nomeTipoUm.name],
-                        background: `url(${typeImage[nomeTipoUm.name]}) center`,
-                        borderWidth: '10px'
-                    }}>
-                        <img alt="img-pokemon" className="image-api"
-                            src={url}
-                        />
+    const renderCard = () => (
+        <div className="pokemon-card" style={{ borderColor: typeColors[nomeTipoUm.name] }}>
+            <div className="card-header">
+                <span className="pokemon-name">{nome}</span>
+                <span className="pokemon-hp">{vida} HP</span>
+            </div>
+            <div className="image-section">
+                {/* Camada do fundo com o GIF borrado */}
+                <div
+                    className="background-gif"
+                    style={{
+                        backgroundImage: `url(${typeImage[nomeTipoUm.name]})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
+                    }}
+                ></div>
+                {/* Spinner enquanto a imagem carrega */}
+                {!isImageLoaded && <div className="spinner"></div>}
+                {/* Imagem do Pokémon com fade-in */}
+                <img
+                    src={url}
+                    alt={nome}
+                    className={`pokemon-image ${isImageLoaded ? 'loaded' : ''}`}
+                    onLoad={() => setIsImageLoaded(true)}
+                    onError={(e) => {
+                        e.target.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+                        setIsImageLoaded(true); // Mesmo em erro, considera como carregado para remover o spinner
+                    }}
+                />
+            </div>
+            <div className="info-section">
+                <div className="type-section">
+                    <span
+                        className="type-badge"
+                        style={{ backgroundColor: typeColors[nomeTipoUm.name] }}
+                    >
+                        {nomeTipoUm.name}
+                    </span>
+                    {nomeTipoDois.name && (
+                        <span
+                            className="type-badge"
+                            style={{ backgroundColor: typeColors[nomeTipoDois.name] }}
+                        >
+                            {nomeTipoDois.name}
+                        </span>
+                    )}
+                </div>
+                <div className="stats-section">
+                    <div className="stat-item">
+                        <span className="stat-label">Height</span>
+                        <span className="stat-value">{tamanho} m</span>
                     </div>
-
-                </div>
-                <div className="d-flex justify-content-center form_container">
-                    <form>
-                        <button type="button" name="button" className="btn name_btn" style={{
-                            marginLeft: '5%',
-                            backgroundColor: '#e4e4e4',
-                            marginBottom: '15px',
-                            width: '90%',
-                            borderRadius: '10px',
-                            border: 'solid',
-                            borderColor: typeColors[nomeTipoUm.name],
-                            padding: '0.3rem'
-                        }}>{<strong>{nome}</strong>}</button>
-                        <button type="button" name="button" className="btn login_btn">{vida + 'Hp'}</button>
-                        <div className="d-flex justify-content-center mt-3 login_container">
-                            <button type="button" name="button" className="btn login_btn">{peso + 'kg'}</button>
-                            <button type="button" name="button" className="btn login_btn">{tamanho + 'm'}</button>
-                        </div>
-                        <br></br>
-                        <button type="button" name="button" style={{
-                            backgroundColor: typeColors[nomeTipoUm.name],
-                            borderRadius: '10px',
-                            padding: '0.5rem',
-                            border: 'none'
-                        }}>{nomeTipoUm.name}</button>
-                        <button type="button" name="button" style={{
-                            backgroundColor: typeColors[nomeTipoDois.name],
-                            borderRadius: '10px',
-                            padding: '0.5rem',
-                            marginLeft: '5px',
-                            border: 'none'
-
-                        }}>{nomeTipoDois.name}</button>
-                    </form>
-                </div>
-            </div>
-        )
-    }
-
-    // Card com apenas um tipo
-    return (
-        <div className="user_card" style={{
-            borderRadius: '20px',
-            borderStyle: 'solid',
-            borderColor: typeColors[nomeTipoUm.name],
-            borderWidth: '10px'
-        }}>
-            <div className="d-flex justify-content-center">
-                <div className="brand_logo_container" style={{
-                    borderRadius: '100px',
-                    borderStyle: 'solid',
-                    borderColor: typeColors[nomeTipoUm.name],
-                    background: `url(${typeImage[nomeTipoUm.name]}) center`,
-                    borderWidth: '10px'
-                }}>
-                    <img alt="img-pokemon" className="image-api"
-                        src={url}
-                    />
-                </div>
-            </div>
-            <div className="d-flex justify-content-center form_container">
-                <form>
-                    <button type="button" name="button" className="btn name_btn" style={{
-                        marginLeft: '5%',
-                        backgroundColor: '#e4e4e4',
-                        marginBottom: '15px',
-                        width: '90%',
-                        borderRadius: '10px',
-                        border: 'solid',
-                        borderColor: typeColors[nomeTipoUm.name],
-                        padding: '0.3rem'
-                    }}>{<strong>{nome}</strong>}</button>
-                    <button type="button" name="button" className="btn login_btn">{vida + 'hp'}</button>
-                    <div className="d-flex justify-content-center mt-3 login_container">
-                        <button type="button" name="button" className="btn login_btn_kg">{peso + 'kg'}</button>
-                        <button type="button" name="button" className="btn login_btn_m">{tamanho + 'm'}</button>
+                    <div className="stat-item">
+                        <span className="stat-label">Weight</span>
+                        <span className="stat-value">{peso} kg</span>
                     </div>
-                    <br></br>
-                    <button type="button" name="button" style={{
-                        backgroundColor: typeColors[nomeTipoUm.name],
-                        borderRadius: '10px',
-                        padding: '0.5rem',
-                        border: 'none'
-                    }}>{nomeTipoUm.name}</button>
-                </form>
+                </div>
             </div>
-
-
         </div>
-    )
-}
+    );
+
+    return renderCard();
+};
+
 export default ListPoke;
-
-

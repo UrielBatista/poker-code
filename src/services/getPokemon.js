@@ -7,6 +7,6 @@ export async function GetAllPokemons() {
 }
 // GET POKEMON 
 export async function GetPokemon(pokemon) {
-    const response = await api.get(`/${pokemon}/`)
+    const response = await api.get(`/${pokemon}`)
     return response.data;
 }
