@@ -6,7 +6,7 @@ import pokeball from '../../assests/png/pokeball.png';
 import AutoSuggest from "react-autosuggest";
 import { notification } from 'antd';
 
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css';
 import '../list/poker_styles.css';
 import '../list/loading_poker.css';
 import './styles.css';
