@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/poker-dex/static/css/main.18436bdc.css",
-    "main.js": "/poker-dex/static/js/main.84a8d68c.js",
+    "main.js": "/poker-dex/static/js/main.67e3d916.js",
     "static/media/intro.png": "/poker-dex/static/media/intro.927812cc3986a6110701.png",
     "static/media/pokeball.png": "/poker-dex/static/media/pokeball.d2a148cc685f62c31ea5.png",
     "index.html": "/poker-dex/index.html",
     "main.18436bdc.css.map": "/poker-dex/static/css/main.18436bdc.css.map",
-    "main.84a8d68c.js.map": "/poker-dex/static/js/main.84a8d68c.js.map"
+    "main.67e3d916.js.map": "/poker-dex/static/js/main.67e3d916.js.map"
   },
   "entrypoints": [
     "static/css/main.18436bdc.css",
-    "static/js/main.84a8d68c.js"
+    "static/js/main.67e3d916.js"
   ]
 }
