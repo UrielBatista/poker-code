@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'antd/dist/antd.min.css';
 import './styles.css';
 import './poker_styles.css';
@@ -6,11 +6,45 @@ import typeColors from '../types/pokemonTypes';
 import typeImage from '../types/typeImages';
 
 const ListPoke = (props) => {
-    const { id, name, height, weight, nomeTipoUm, nomeTipoDois, vida } = props;
+    const { id, name, height, weight, nomeTipoUm, nomeTipoDois, vida, abilityId } = props;
     const url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
 
-    // Estado para controlar se a imagem foi carregada
     const [isImageLoaded, setIsImageLoaded] = useState(false);
+    const [description, setDescription] = useState('');
+
+    useEffect(() => {
+        const fetchDescription = async () => {
+            // Primeira tentativa: buscar a descrição da habilidade
+            try {
+                const abilityUrl = `https://pokeapi.co/api/v2/ability/${abilityId || id}`;
+                const response = await fetch(abilityUrl);
+                if (!response.ok) throw new Error('Erro na requisição da habilidade');
+                const data = await response.json();
+                const effectEntry = data.effect_entries[0];
+                setDescription(effectEntry ? effectEntry.effect : 'No ability effect available.');
+            } catch (error) {
+                console.error('Erro ao buscar descrição da habilidade:', error);
+                // Fallback: buscar a descrição da espécie do Pokémon
+                try {
+                    const speciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${id}`;
+                    const speciesResponse = await fetch(speciesUrl);
+                    if (!speciesResponse.ok) throw new Error('Erro na requisição da espécie');
+                    const speciesData = await speciesResponse.json();
+                    const englishEntry = speciesData.flavor_text_entries.find(
+                        (entry) => entry.language.name === 'en'
+                    );
+                    setDescription(englishEntry ? englishEntry.flavor_text : 'No description available.');
+                } catch (speciesError) {
+                    console.error('Erro ao buscar descrição da espécie:', speciesError);
+                    setDescription('Failed to load description.');
+                }
+            }
+        };
+
+        if (id) {
+            fetchDescription();
+        }
+    }, [id, abilityId]);
 
     if (!typeImage[nomeTipoUm.name] || !id) {
         return (
@@ -35,7 +69,6 @@ const ListPoke = (props) => {
                 <span className="pokemon-hp">{vida} HP</span>
             </div>
             <div className="image-section">
-                {/* Camada do fundo com o GIF borrado */}
                 <div
                     className="background-gif"
                     style={{
@@ -44,9 +77,7 @@ const ListPoke = (props) => {
                         backgroundPosition: 'center'
                     }}
                 ></div>
-                {/* Spinner enquanto a imagem carrega */}
                 {!isImageLoaded && <div className="spinner"></div>}
-                {/* Imagem do Pokémon com fade-in */}
                 <img
                     src={url}
                     alt={nome}
@@ -54,9 +85,12 @@ const ListPoke = (props) => {
                     onLoad={() => setIsImageLoaded(true)}
                     onError={(e) => {
                         e.target.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
-                        setIsImageLoaded(true); // Mesmo em erro, considera como carregado para remover o spinner
+                        setIsImageLoaded(true);
                     }}
                 />
+            </div>
+            <div className="description-section">
+                <p className="pokemon-description">{description}</p>
             </div>
             <div className="info-section">
                 <div className="type-section">
